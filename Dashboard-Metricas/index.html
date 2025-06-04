@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Métricas RRHH</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Dashboard de RRHH</h1>
+            <p class="subtitle">Visualización de trámites y empleados por departamento (2025)</p>
+        </header>
+        
+        <!-- Filtros -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="filterDepto">Departamento:</label>
+                <select id="filterDepto">
+                    <option value="all">Todos</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="it">TI</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="filterMonth">Mes:</label>
+                <select id="filterMonth">
+                    <option value="all">Todos</option>
+                    <option value="enero">Enero</option>
+                    <option value="febrero">Febrero</option>
+                    <option value="marzo">Marzo</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Tarjetas Resumen -->
+        <div class="summary-cards">
+            <div class="card">
+                <h3>Total Trámites</h3>
+                <p id="totalTramites">0</p>
+            </div>
+            <div class="card">
+                <h3>Empleados Activos</h3>
+                <p id="totalEmpleados">0</p>
+            </div>
+            <div class="card">
+                <h3>Eficiencia</h3>
+                <p id="eficiencia">0%</p>
+            </div>
+        </div>
+        
+        <!-- Gráficos -->
+        <div class="charts">
+            <div class="chart-container">
+                <h2>Trámites Completados</h2>
+                <canvas id="tramitesChart"></canvas>
+                <p class="chart-note">* Meta mensual: 120 trámites</p>
+            </div>
+            <div class="chart-container">
+                <h2>Distribución de Empleados</h2>
+                <canvas id="empleadosChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
